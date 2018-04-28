@@ -1,0 +1,140 @@
+﻿[
+  {
+    "IsActive": true,
+    "Name": "UploadFilesToServer",
+    "Value": [
+      {
+        "IsActive": true,
+        "Name": "LocalInboundFilesPath",
+        "Value": "C:InboundFilesToUpload"
+      },
+      {
+        "IsActive": true,
+        "Name": "ServerInboundFilesPath",
+        "Value": "unix:InboundFilesToUpload"
+      },
+      {
+        "IsActive": true,
+        "Name": "InboundFilesToUpload",
+        "Value": [
+          {
+            "IsActive": true,
+            "Name": "[0]",
+            "Value": "FileA"
+          },
+          {
+            "IsActive": true,
+            "Name": "[1]",
+            "Value": "FileB"
+          },
+          {
+            "IsActive": true,
+            "Name": "[2]",
+            "Value": "FileC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "IsActive": true,
+    "Name": "CleanOutboundLocation",
+    "Value": [
+      {
+        "IsActive": true,
+        "Name": "LocalOutboundFilesPath",
+        "Value": "C:OutboundFilesToDownload"
+      },
+      {
+        "IsActive": true,
+        "Name": "ServerOutboundFilesPath",
+        "Value": "unix:OutboundFilesToDownload"
+      },
+      {
+        "IsActive": true,
+        "Name": "OutboundFilesToDownload",
+        "Value": [
+          {
+            "IsActive": true,
+            "Name": "[0]",
+            "Value": "FileX"
+          },
+          {
+            "IsActive": true,
+            "Name": "[1]",
+            "Value": "FileY"
+          },
+          {
+            "IsActive": true,
+            "Name": "[2]",
+            "Value": "FileZ"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "IsActive": true,
+    "Name": "RunAutoSysJobs",
+    "Value": [
+      {
+        "IsActive": true,
+        "Name": "[0]",
+        "Value": "Job1"
+      },
+      {
+        "IsActive": true,
+        "Name": "[1]",
+        "Value": "Job2"
+      },
+      {
+        "IsActive": true,
+        "Name": "[2]",
+        "Value": "Job3"
+      }
+    ]
+  },
+  {
+    "IsActive": true,
+    "Name": "DownloadFilesFromServer",
+    "Value": null
+  },
+  {
+    "IsActive": true,
+    "Name": "ValidateDataInDownloadedFiles",
+    "Value": [
+      {
+        "IsActive": true,
+        "Name": "[0]",
+        "Value": [
+          {
+            "IsActive": true,
+            "Name": "FileToValidate",
+            "Value": "FileX"
+          },
+          {
+            "IsActive": true,
+            "Name": "QueryToValidate",
+            "Value": "QueryX"
+          }
+        ]
+      },
+      {
+        "IsActive": true,
+        "Name": "[1]",
+        "Value": [
+          {
+            "IsActive": true,
+            "Name": "FileToValidate",
+            "Value": "FileZ"
+          },
+          {
+            "IsActive": true,
+            "Name": "QueryToValidate",
+            "Value": "QueryX"
+          }
+        ]
+      }
+    ]
+  }
+]

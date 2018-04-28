@@ -1,0 +1,24 @@
+﻿{
+  "UploadFilesToServer": {
+    "LocalInboundFilesPath": "C:InboundFilesToUpload",
+    "ServerInboundFilesPath": "unix:InboundFilesToUpload",
+    "InboundFilesToUpload": ["FileA", "FileB", "FileC"]
+  },
+  "CleanOutboundLocation": {
+    "LocalOutboundFilesPath": "C:OutboundFilesToDownload",
+    "ServerOutboundFilesPath": "unix:OutboundFilesToDownload",
+    "OutboundFilesToDownload": ["FileX", "FileY", "FileZ"]
+  },
+  "RunAutoSysJobs": ["Job1", "Job2", "Job3"],
+  "DownloadFilesFromServer": null,
+  "ValidateDataInDownloadedFiles": [
+    {
+      "FileToValidate": "FileX",
+      "QueryToValidate": "QueryX"
+    },
+    {
+      "FileToValidate": "FileZ",
+      "QueryToValidate": "QueryX"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+﻿<Window x:Class="JsonEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JsonEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:TsDataTemplateSelector x:Key="TsDataTemplateSelector"></local:TsDataTemplateSelector>
+        <DataTemplate x:Key="StringFieldTemplate">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding Path=IsActive}"></CheckBox>
+                <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                <TextBox  Text="{Binding Path=Value}"></TextBox>
+            </StackPanel>
+        </DataTemplate>
+        <HierarchicalDataTemplate x:Key="ArrayTemplate" 
+                                          ItemsSource="{Binding Path=Value}" 
+                                          ItemTemplateSelector="{StaticResource TsDataTemplateSelector}">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding Path=IsActive}"/>
+                <TextBlock Text="{Binding Path=Name}"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate x:Key="ObjectTemplate" 
+                                          ItemsSource="{Binding Path=Value}" 
+                                          ItemTemplateSelector="{StaticResource TsDataTemplateSelector}">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding Path=IsActive}"/>
+                <TextBlock Text="{Binding Path=Name}"/>
+            </StackPanel>
+        </HierarchicalDataTemplate>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top">
+                <Button x:Name="tbtnSave" Content="Save" Click="Button_Click"/>
+                <Button x:Name="tbtnOpen" Content="Open"></Button>
+                <Button x:Name="tbtnAddField" Content="Add"></Button>
+                <Button x:Name="tbtnDeleteField" Content="Delete"></Button>
+            </ToolBar>
+            <TreeView x:Name="tvw_display" ItemsSource="{Binding}" 
+                  ItemTemplate="{StaticResource ObjectTemplate}">
+            </TreeView>
+        </DockPanel>
+    </Grid>
+</Window>
